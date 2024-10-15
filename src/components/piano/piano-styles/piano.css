@@ -12,8 +12,8 @@
 }
 
 :root {
-  --piano-height: 150px;
-  --piano-width: 600px;
+  --piano-height: 125px;
+  --piano-width: 450px;
 }
 
 .piano {
