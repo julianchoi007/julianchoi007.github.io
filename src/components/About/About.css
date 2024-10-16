@@ -1,0 +1,9 @@
+.about {
+  background: radial-gradient(
+    circle,
+    #d59eb5 0%,
+    #e6a895 33%,
+    #9fc9bc 66%,
+    lightgray 100%
+  );
+}

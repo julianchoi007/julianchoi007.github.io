@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { AUDIO } from "./piano-constants";
+import { AUDIO } from "../../constants/piano-constants";
 
 const BlackKey = (props) => {
   const documentRef = useRef(document);

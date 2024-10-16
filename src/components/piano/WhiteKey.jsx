@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef } from "react";
-import { AUDIO } from "./piano-constants";
+import { useEffect, useState, useRef, useContext } from "react";
+import { AUDIO } from "../../constants/piano-constants";
 
 const WhiteKey = (props) => {
   const documentRef = useRef(document);

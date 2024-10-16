@@ -1,25 +1,19 @@
 import "./App.css";
-import Piano from "./components/piano/Piano";
-import { Routes, Route, useLocation } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import SlideRight from "./components/SlideRight";
-import { useRef } from "react";
-
+import Main from "./pages/Page";
+import { useRef, useState } from "react";
+import RefContext from "./context/RefContext";
+import KeyContext from "./context/KeyContext";
 function App() {
-  const location = useLocation();
   const appRef = useRef(null);
+  const [keys, setKeys] = useState(["", "", "", "", ""]);
+  const keyContext = { keys, setKeys };
   return (
     <div className="App" ref={appRef}>
-      <SlideRight />
-      <Routes location={location} key={location.pathname}>
-        <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <div>Nice To Meet You, My Name Is Julian</div>
-      <Piano appRef={appRef} />
+      <RefContext.Provider value={appRef}>
+        <KeyContext.Provider value={keyContext}>
+          <Main />
+        </KeyContext.Provider>
+      </RefContext.Provider>
     </div>
   );
 }
